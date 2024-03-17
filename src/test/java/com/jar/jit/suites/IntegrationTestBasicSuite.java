@@ -7,7 +7,7 @@ import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
 
-@Suite
+//@Suite
 @SuiteDisplayName("Basic integration test suite")
 @SelectClasses( AccountControllerIT.class )
 @IncludeTags("basic")

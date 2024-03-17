@@ -1,0 +1,24 @@
+{
+  "request": {
+    "urlPath": "/nbp/exchangerates/rates/A/EUR",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "table": "A",
+      "currency": "euro",
+      "code": "EUR",
+      "rates": [
+        {
+          "no": "054/A/NBP/2024",
+          "effectiveDate": "2024-03-15",
+          "mid": 4.2929
+        }
+      ]
+    }
+  }
+}
