@@ -42,8 +42,13 @@ public class AccountService {
         if (currency == null) {
             throw new IllegalArgumentException("Currency is required");
         }
-        if (!Set.of(acc.getCurrency().getCurrencyCode(), update.getCurrency().getCurrencyCode()).contains("PLN")) {
-            throw new IllegalArgumentException("Only PLN account can switch or from PLN account");
+        String currencyFrom = acc.getCurrency().getCurrencyCode();
+        String currencyTo = update.getCurrency().getCurrencyCode();
+        if (!("PLN".equals(currencyFrom) || "PLN".equals(currencyTo))) {
+            throw new IllegalArgumentException("Can only update from PLN or to PLN");
+        }
+        if ("PLN".equals(currencyFrom) && "PLN".equals(currencyTo)) {
+            throw new IllegalArgumentException("Can only update from PLN or to PLN");
         }
         if (!Set.of("PLN", "USD", "EUR").contains(currency.getCurrencyCode())) {
             throw new IllegalArgumentException("Not accepted currency");
